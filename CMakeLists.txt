@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(tile-maker VERSION 1.0 LANGUAGES C)
-
-# set(CMAKE_CXX_STANDARD 20)
+project(image-tiler VERSION 1.0 LANGUAGES C)
 
 find_package(ImageMagick COMPONENTS MagickWand REQUIRED)
 include_directories(${ImageMagick_INCLUDE_DIRS})
@@ -12,7 +10,7 @@ file(GLOB_RECURSE TLM_SOURCES
   src/*.c)
 
 file(GLOB_RECURSE TLM_HEADERS
-  src/*.h)
+  include/*.h)
 
 add_executable(${PROJECT_NAME} ${TLM_SOURCES} ${TLM_HEADERS})
 
